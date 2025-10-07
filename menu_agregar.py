@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menu_agregarBdpnQT.ui'
+## Form generated from reading UI file 'menu_agregaraScnEn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -84,6 +84,64 @@ class Ui_menu_agregar(object):
 "    background-color: #9a5833; /* Un color a\u00fan m\u00e1s oscuro */\n"
 "\n"
 "}")
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(0, 0, 711, 461))
+        self.frame_2.setStyleSheet(u"QFrame {\n"
+"    background-color: rgb(255, 252, 242);\n"
+"    border: 5px solid #b4764f;\n"
+"    border-radius: 30px;\n"
+"}")
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.titulo_2 = QLabel(self.frame_2)
+        self.titulo_2.setObjectName(u"titulo_2")
+        self.titulo_2.setGeometry(QRect(250, 50, 201, 61))
+        self.titulo_2.setStyleSheet(u"QLabel{\n"
+"color: #9a5833;\n"
+"border: none;\n"
+"font-weight: bold;\n"
+"font-size: 30px;\n"
+"font-family:  \"Arial Rounded MT\";\n"
+"}\n"
+"")
+        self.titulo_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.exis_buton_2 = QPushButton(self.frame_2)
+        self.exis_buton_2.setObjectName(u"exis_buton_2")
+        self.exis_buton_2.setGeometry(QRect(160, 190, 131, 51))
+        self.exis_buton_2.setStyleSheet(u"QPushButton{\n"
+"font-family: \"Arial Rounded MT\";\n"
+"color:rgb(91, 27, 0);\n"
+"background-color: rgb(205, 150, 108);\n"
+"border-radius: 10px;\n"
+"padding: 1px 2px;;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    /* \ud83d\uddb1\ufe0f Color al pasar por encima */\n"
+"    background-color: #b4764f; /* Un azul m\u00e1s oscuro que el base */\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #9a5833; /* Un color a\u00fan m\u00e1s oscuro */\n"
+"\n"
+"}")
+        self.nuevo_buton_2 = QPushButton(self.frame_2)
+        self.nuevo_buton_2.setObjectName(u"nuevo_buton_2")
+        self.nuevo_buton_2.setGeometry(QRect(390, 190, 131, 51))
+        self.nuevo_buton_2.setStyleSheet(u"QPushButton{\n"
+"font-family: \"Arial Rounded MT\";\n"
+"color:rgb(91, 27, 0);\n"
+"background-color: rgb(205, 150, 108);\n"
+"border-radius: 10px;\n"
+"padding: 1px 2px;;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    /* \ud83d\uddb1\ufe0f Color al pasar por encima */\n"
+"    background-color: #b4764f; /* Un azul m\u00e1s oscuro que el base */\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #9a5833; /* Un color a\u00fan m\u00e1s oscuro */\n"
+"\n"
+"}")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -104,5 +162,9 @@ class Ui_menu_agregar(object):
 " PRODUCTOS", None))
         self.exis_buton.setText(QCoreApplication.translate("MainWindow", u"EXISTENTE", None))
         self.nuevo_buton.setText(QCoreApplication.translate("MainWindow", u"NUEVO", None))
+        self.titulo_2.setText(QCoreApplication.translate("MainWindow", u"AGREGAR \n"
+" PRODUCTOS", None))
+        self.exis_buton_2.setText(QCoreApplication.translate("MainWindow", u"EXISTENTE", None))
+        self.nuevo_buton_2.setText(QCoreApplication.translate("MainWindow", u"NUEVO", None))
     # retranslateUi
 

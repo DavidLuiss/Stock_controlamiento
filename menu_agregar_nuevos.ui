@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1169</width>
+    <height>811</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_main">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>1091</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame_main {
+    background-color: rgb(255, 252, 242);
+    border: 5px solid #b4764f;
+    border-radius: 30px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="titulo">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>561</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+color: #9a5833;
+border: none;
+font-weight: bold;
+font-size: 30px;
+font-family:  &quot;Arial Rounded MT&quot;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>AGREGAR PRODUCTOS NUEVOS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buton_agregar">
+     <property name="geometry">
+      <rect>
+       <x>920</x>
+       <y>170</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>AGREGAR</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_descripcion">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>70</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_descripcion{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Nombre/Descripcion</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="titulo_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>390</y>
+       <width>561</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+color: #9a5833;
+border: none;
+font-weight: bold;
+font-size: 30px;
+font-family:  &quot;Arial Rounded MT&quot;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>RESUMEN AGREGADO</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tabla_resumen_existente">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>440</y>
+       <width>906</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* 1. ANULACIÓN DE HERENCIA DEL CONTENEDOR PRINCIPAL */
+#tabla_resumen_existente {
+    background-color: #ffd7ab; 
+    border: 5px solid #555555; 
+    border-radius: 6px; 
+    color: rgb(0, 0, 0);
+    gridline-color: transparent; /* Usaremos border en ::item */
+    selection-background-color: #0078D7;
+}
+
+/* 2. ESTILO DE LAS CELDAS DE DATOS (Items) */
+#tabla_resumen_existente::item {
+    border-bottom: 1px solid #444444; 
+    border-right: 1px solid #444444;  
+    padding: 5px;
+    background-color: #ffd7ab; /* Forzar el fondo para evitar herencia de celda si la hay */
+}
+/* 3. ANULACIÓN DE HERENCIA PARA TODOS LOS ENCABEZADOS (Columnas y Filas) */
+#tabla_resumen_existente QHeaderView::section {
+    /* Fondo y borde para anular el blanco/marrón heredado */
+    background-color: #e7b68b; 
+	color:rgb(91, 27, 0);
+    border: none; 
+    
+    /* Definir bordes limpios para los encabezados */
+    border-right: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    padding: 5px;
+}
+/* 4. ANULACIÓN DE LA CELDA DE ESQUINA */
+#tabla_resumen_existente QTableCornerButton::section {
+    background-color: #444444;
+    border: none;
+}
+
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+     </property>
+     <property name="showGrid">
+      <bool>true</bool>
+     </property>
+     <property name="rowCount">
+      <number>3</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>32</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>224</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>70</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Nueva fila</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>fila3</string>
+      </property>
+     </row>
+     <row/>
+     <column>
+      <property name="text">
+       <string>Código</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Descripcion</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Imagen referencial</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Cantidad</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_codigo">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>230</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_codigo{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Código</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_cantidad">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>290</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_cantidad{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Cantidad</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_categoria">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>130</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_categoria{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Categoria</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_imagen">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>70</y>
+       <width>441</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_imagen {
+    background-color: #ffd7ab; 
+    border: 5px solid #555555; 
+    border-radius: 20px; 
+    color: rgb(0, 0, 0);
+    gridline-color: transparent; /* Usaremos border en ::item */
+    selection-background-color: #0078D7;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_precio">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>180</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_precio{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Precio referencial</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1169</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

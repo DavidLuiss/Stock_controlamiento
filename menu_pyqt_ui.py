@@ -19,11 +19,11 @@ from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QMainWindow,
     QMenuBar, QPushButton, QSizePolicy, QStatusBar,
     QWidget)
 
-class Ui_MainWindow(object):
+class Ui_menu_pyqt(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(765, 546)
+        MainWindow.resize(765, 529)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.frame = QFrame(self.centralwidget)
@@ -102,10 +102,10 @@ class Ui_MainWindow(object):
 "    background-color: #9a5833; /* Un color a\U000000fan m\U000000e1s oscuro */\n"
 "\n"
 "}")
-        self.impr_etiq_3 = QPushButton(self.frame)
-        self.impr_etiq_3.setObjectName(u"impr_etiq_3")
-        self.impr_etiq_3.setGeometry(QRect(280, 210, 131, 51))
-        self.impr_etiq_3.setStyleSheet(u"QPushButton{\n"
+        self.menu_precios = QPushButton(self.frame)
+        self.menu_precios.setObjectName(u"menu_precios")
+        self.menu_precios.setGeometry(QRect(280, 210, 131, 51))
+        self.menu_precios.setStyleSheet(u"QPushButton{\n"
 "font-family: \"Arial Rounded MT\";\n"
 "color:rgb(91, 27, 0);\n"
 "background-color: rgb(205, 150, 108);\n"
@@ -143,6 +143,6 @@ class Ui_MainWindow(object):
 "ETIQUETAS", None))
         self.nota_vent.setText(QCoreApplication.translate("MainWindow", u"NOTAS \n"
 "DE VENTA", None))
-        self.impr_etiq_3.setText(QCoreApplication.translate("MainWindow", u"PRECIOS", None))
+        self.menu_precios.setText(QCoreApplication.translate("MainWindow", u"PRECIOS", None))
     # retranslateUi
 

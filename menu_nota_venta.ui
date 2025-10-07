@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1186</width>
+    <height>896</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_main">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>0</y>
+      <width>1091</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame_main {
+    background-color: rgb(255, 252, 242);
+    border: 5px solid #b4764f;
+    border-radius: 30px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QTableWidget" name="tabla_resumen_existente">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>220</y>
+       <width>906</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* 1. ANULACIÓN DE HERENCIA DEL CONTENEDOR PRINCIPAL */
+#tabla_resumen_existente {
+    background-color: #ffd7ab; 
+    border: 5px solid #555555; 
+    border-radius: 6px; 
+    color: rgb(0, 0, 0);
+    gridline-color: transparent; /* Usaremos border en ::item */
+    selection-background-color: #0078D7;
+}
+
+/* 2. ESTILO DE LAS CELDAS DE DATOS (Items) */
+#tabla_resumen_existente::item {
+    border-bottom: 1px solid #444444; 
+    border-right: 1px solid #444444;  
+    padding: 5px;
+    background-color: #ffd7ab; /* Forzar el fondo para evitar herencia de celda si la hay */
+}
+/* 3. ANULACIÓN DE HERENCIA PARA TODOS LOS ENCABEZADOS (Columnas y Filas) */
+#tabla_resumen_existente QHeaderView::section {
+    /* Fondo y borde para anular el blanco/marrón heredado */
+    background-color: #e7b68b; 
+	color:rgb(91, 27, 0);
+    border: none; 
+    
+    /* Definir bordes limpios para los encabezados */
+    border-right: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    padding: 5px;
+}
+/* 4. ANULACIÓN DE LA CELDA DE ESQUINA */
+#tabla_resumen_existente QTableCornerButton::section {
+    background-color: #444444;
+    border: none;
+}
+
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="showGrid">
+      <bool>true</bool>
+     </property>
+     <property name="rowCount">
+      <number>5</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>32</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>224</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>70</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Nueva fila</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>fila3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>fila_2</string>
+      </property>
+     </row>
+     <row/>
+     <row/>
+     <column>
+      <property name="text">
+       <string>Cantidad</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Descripcion</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Valor unitario (S/.)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Importe (S/.)</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="titulo_3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>40</y>
+       <width>561</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+color: #9a5833;
+border: none;
+font-weight: bold;
+font-size: 30px;
+font-family:  &quot;Arial Rounded MT&quot;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>NOTAS DE VENTA</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Buscar_buton_4">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>110</y>
+       <width>151</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Agregar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_1">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>630</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_1{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: #e7b68b;
+border-radius: 10px;
+padding: 1px 2px;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>630</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_2{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(255, 252, 242);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>TOTAL (IGV incl.) :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_buscar_codigo">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>170</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_buscar_codigo{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Codigo Barra</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_cliente">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>110</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_cliente{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Nombre</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_cantidad">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>170</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_cantidad{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Cantidad</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_valor">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>170</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_valor{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Precio</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_cliente_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>110</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_cliente_2{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>DNI/RUC</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_cliente_3">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>110</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#lineEdit_cliente_3{
+	background-color: #ffd7ab;
+	color : rgb(0, 0, 0);
+	border: 2px solid #555555; 
+    border-radius: 5px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Direccion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="borrar_buton_1">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>270</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 25px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Borrar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="borrar_buton_2">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 25px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Borrar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="borrar_buton_3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>410</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 25px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Borrar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="borrar_buton_4">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>480</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 25px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Borrar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="borrar_buton_5">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>540</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 25px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Borrar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buton_imprimir_venta">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>630</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(255, 255, 255);
+background-color: rgb(108, 108, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: rgb(58, 58, 58); /* Un azul más oscuro que el base */
+   color:rgb(255, 255, 255);
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>IMPRIMIR</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1186</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
