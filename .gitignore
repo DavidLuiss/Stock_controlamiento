@@ -1,0 +1,4 @@
+contro_stock/
+__pycache__
+*.pyc
+.DS_Store

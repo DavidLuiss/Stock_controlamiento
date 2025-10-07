@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>765</width>
+    <height>546</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>711</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+    background-color: rgb(255, 252, 242);
+    border: 5px solid #b4764f;
+    border-radius: 30px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="Titulo">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>30</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+color: #9a5833;
+border: none;
+font-weight: bold;
+font-size: 30px;
+font-family:  &quot;Arial Rounded MT&quot;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>MENU</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="adic_prod">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>140</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>AGREGAR
+PRODUCTOS</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="impr_etiq">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>IMPRESION
+ETIQUETAS</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="nota_vent">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>140</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>NOTAS 
+DE VENTA</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="impr_etiq_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>210</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-family: &quot;Arial Rounded MT&quot;;
+color:rgb(91, 27, 0);
+background-color: rgb(205, 150, 108);
+border-radius: 10px;
+padding: 1px 2px;;
+}
+QPushButton:hover {
+    /* 🖱️ Color al pasar por encima */
+    background-color: #b4764f; /* Un azul más oscuro que el base */
+}
+QPushButton:pressed {
+    background-color: #9a5833; /* Un color aún más oscuro */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>PRECIOS</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>765</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
